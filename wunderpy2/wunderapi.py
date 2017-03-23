@@ -23,12 +23,14 @@ class WunderApi:
                 LIST_POSITIONS = "list_positions"
                 TASK_POSITIONS = "task_positions"
                 SUBTASK_POSITIONS = "subtask_positions"
+                WEBHOOKS = "webhooks"
 
             self.DATE_FORMAT = '%Y-%m-%d'
             self.DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
             self.MAX_TASK_TITLE_LENGTH = 255
             self.MAX_LIST_TITLE_LENGTH = 255
             self.MAX_SUBTASK_TITLE_LENGTH = 255
+            self.MAX_WEBHOOK_URL_LENGTH = 255
         self.Endpoints = _Endpoints
 
     def _validate_response(self, method, response):

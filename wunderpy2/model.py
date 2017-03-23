@@ -42,6 +42,17 @@ class Subtask(_WunderlistEntity):
     COMPLETED = 'completed'
     TYPE = 'type'
 
+class Webhook(_WunderlistEntity):
+    ''' POJO Containing subtask JSON keys '''
+    LIST_ID = 'list_id'
+    MEMBERSHIP_ID = "membership_id"
+    MEMBERSHIP_TYPE = "membership_type"
+    URL = "url"
+    PROCESSOR_TYPE = "processor_type"
+    CONFIGURATION = "configuration"
+    CREATION_TIMESTAMP = 'created_at'
+    UPDATE_TIMESTAMP = "updated_at"
+
 # NOTE Wunderlist automatically creates positions objects, so they don't have creation information
 class _PositionsObj(_WunderlistObj):
     VALUES = 'values'
