@@ -7,6 +7,7 @@ from . import lists_endpoint
 from . import tasks_endpoint
 from . import notes_endpoint
 from . import subtasks_endpoint
+from . import webhooks_endpoint
 from . import positions_endpoints
 
 class WunderClient:
@@ -162,6 +163,23 @@ class WunderClient:
     def delete_subtask(self, subtask_id, revision):
         ''' Deletes the subtask with the given ID '''
         subtasks_endpoint.delete_subtask(self, subtask_id, revision)
+
+    def get_webhooks(self, list_id):
+        ''' Gets webhooks for the list with given ID '''
+        return webhooks_endpoint.get_webhooks(self, list_id)
+
+    def create_webhook(self, list_id, url, processor_type, configuration=""):
+        '''
+        Creates a webhook with the given url under the list with the given ID
+
+        Return:
+        Newly-created webhook
+        '''
+        return webhooks_endpoint.create_webhook(self, list_id, url, processor_type, configuration)
+
+    def delete_webhook(self, webhook_id, revision):
+        ''' Deletes the webhook with the given ID '''
+        webhooks_endpoint.delete_webhook(self, webhook_id, revision)
 
     def get_list_positions_objs(self):
         '''
